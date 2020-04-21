@@ -28,25 +28,27 @@ const FIELDS = [
 
 function App() {
 
-  const [formFields, setFormFields] = useState([]);
+  const [users, setUsers] = useState([]);
   const [updated, setUpdated] = useState(false);
 
 
+  // for SignupForm.js
   const updateUserInfo = (userInfo) => {
     console.log('you just clicked the button!');
 
-    const newformFields = [...formFields]; 
+    const newUsers = [...users]; 
 
 
-    newformFields.push(userInfo);
-    setFormFields(newformFields);
+    newUsers.push(userInfo);
+    setUsers(newUsers);
 
     setUpdated(true);
   }
 
 
+  // for UserInfo.js
   const displayUserInfo = () => {
-    const recentForm = formFields[0]
+    const recentForm = users[0]
 
     if (recentForm) {
       return (
@@ -73,7 +75,7 @@ function App() {
           updated={updated}
         />
         <UserInfo 
-          formField={formFields[0]}
+          // user={users[0]}
           updated={updated}
           displayUserInfoCallback={displayUserInfo}
         />

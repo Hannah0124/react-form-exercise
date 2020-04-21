@@ -4,7 +4,7 @@ import './SignupForm.css';
 
 const SignupForm = ({fields, updateUserInfoCallback, updated}) => {
 
-  const [formField, setFormField] = useState({
+  const [userInfo, setUserInfo] = useState({
     firstName: "",
     lastName: "",
     email: "",
@@ -17,13 +17,11 @@ const SignupForm = ({fields, updateUserInfoCallback, updated}) => {
 
     const {name, value} = event.target;
 
-    const newFormField = {...formField};
+    const newFormField = {...userInfo};
 
     newFormField[name] = value;
-    setFormField(newFormField);
+    setUserInfo(newFormField);
   };
-
-  console.log('ho', formField)
 
 
   const onFormSubmit = (event) => {
@@ -31,14 +29,14 @@ const SignupForm = ({fields, updateUserInfoCallback, updated}) => {
 
     console.log("submitting form...")
 
-    if (formField.firstName !== '' && formField.lastName !== '' && formField.email !== '' && formField.password !== '') {
-      updateUserInfoCallback(formField);
+    if (userInfo.firstName !== '' && userInfo.lastName !== '' && userInfo.email !== '' && userInfo.password !== '') {
+      updateUserInfoCallback(userInfo);
     };
   };
 
 
   const signUpFormComponents = fields.map((field, i) => {
-    const userInput = formField[field.key];
+    const userInput = userInfo[field.key];
     return (
       <input 
         key={i}
@@ -57,8 +55,16 @@ const SignupForm = ({fields, updateUserInfoCallback, updated}) => {
       className={updated ? "new-user-form hidden" : "new-user-form" }
       onSubmit={onFormSubmit}
     >
-      <input className="blue-btn" type="submit" value="Connect with Facebook" />
-      <input className="skyblue-btn" type="submit" value="Connect with Twitter" />
+      <input 
+        className="blue-btn" 
+        type="submit" 
+        value="Connect with Facebook" 
+      />
+      <input 
+        className="skyblue-btn" 
+        type="submit" 
+        value="Connect with Twitter" 
+      />
       <p>Or sign up with</p>
       <div className="user-input-container">
         {signUpFormComponents}
@@ -78,6 +84,7 @@ const SignupForm = ({fields, updateUserInfoCallback, updated}) => {
 SignupForm.propTypes = {
   fields: PropTypes.array.isRequired,
   updateUserInfoCallback: PropTypes.func.isRequired,
+  updated: PropTypes.bool.isRequired,
 };
 
 export default SignupForm;

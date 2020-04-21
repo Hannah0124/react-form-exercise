@@ -22,7 +22,8 @@ const UserInfo = (props) => {
 
 UserInfo.propTypes = {
   updated: PropTypes.bool.isRequired,
-  formField: PropTypes.object,
+  // user: PropTypes.object,
+  displayUserInfoCallback: PropTypes.func.isRequired,
 }
 
 
