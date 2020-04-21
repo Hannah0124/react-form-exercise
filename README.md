@@ -1,68 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://github.com/Ada-Developers-Academy/textbook-curriculum/edit/master/React/exercises/forms-worksheet.md
 
-## Available Scripts
+# Controlled Forms Exercise
 
-In the project directory, you can run:
+Controlled forms are an important part of the React style of web programming. Let's get some practice with them!
 
-### `npm start`
+## Instructions
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This is an in-class exercise and will not be submitted.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Wave 1
 
-### `npm test`
+Create a new React app with `npx create-react-app`. Something like `npx create-react-app forms-exercise` will create a new project named `forms-exercise` and will do just perfectly.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This app will have one component called `SignupForm`.
 
-### `npm run build`
+The form should have five input elements:
+- First name
+- Last name
+- Email
+- Password
+- "Create account" button
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The form should be controlled by React, that is, use state and `onChange` event handlers to manage the data.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+When the form is submitted, it should log the user's information to the console.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Wave 2 (Optional)
 
-### `npm run eject`
+Style the form to look like this:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![sign-up form](images/signup-form.jpg)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Don't worry about the Facebook / Twitter buttons - either leave them out or make them do nothing.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Wave 3 (Optional)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Create another component, `UserInfo`, that displays the user's name and email (not password). Once the form is submitted, hide the form and display the `UserInfo` component with the user's information instead. Style it slickly.
 
-## Learn More
+## Sources
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Signup form image: https://w3layouts.com/signup-form-flat-template/
